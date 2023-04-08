@@ -31,7 +31,9 @@ class MyApp extends StatelessWidget {
         '/materiel': (context) => const Materiel(
               title: 'Crocheton',
             ),
-        '/quizz': (context) => const Quizz(),
+        '/quizz': (context) => const Quizz(
+              title: 'Crocheton Quizz',
+            ),
       },
     );
   }

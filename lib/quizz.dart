@@ -1,19 +1,30 @@
 import 'package:flutter/material.dart';
-import 'modelQuizz.dart';
+import 'model_quizz.dart';
 
 class Quizz extends StatelessWidget {
-  const Quizz({super.key});
+  const Quizz({
+    super.key,
+    required this.title,
+  });
+
+  final String title;
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Crocheton Quizz',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primarySwatch: Colors.blueGrey,
         ),
-        home: const Scaffold(
-          body: QuestionWidget(),
+        home: Scaffold(
+          appBar: AppBar(
+            title: const Text('Crocheton Quizz'),
+            leading: IconButton(
+              icon: const Icon(Icons.arrow_back),
+              onPressed: () => Navigator.of(context).pop(null),
+            ),
+          ),
+          body: const QuestionWidget(),
         ));
   }
 }
